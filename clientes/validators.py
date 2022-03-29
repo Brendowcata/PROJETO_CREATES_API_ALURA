@@ -1,7 +1,9 @@
 import re
+from validate_docbr import CPF
 
 def cpf_IsValid(cpf):
-    return len(cpf) == 11
+    cpf = CPF()
+    return cpf.validate(cpf)
 
 def nome_IsValid(nome):
     return nome.isalpha()
@@ -14,4 +16,6 @@ def celular_IsValid(celular):
     modelo = '[0-9]{2} [0-9]{5}-[0-9]{4}'
     resposta = re.findall(modelo, celular)
     return resposta
+
+
             
